@@ -11,13 +11,11 @@ library(rgdal) # package for geospatial analysis
 library(ggplot2)
 library(reshape2)
 
-# test
 source('~/Dropbox/mHM/mHM_results/mhm_read_functions.R')
-source('~/Dropbox/mHM/data_processing/post_process_platform_2023_04/platform_macrobasins/aux_init_variables.R')
+source('aux_init_variables.R')
 
 ############ SIMULATION HISTORICA #######
 main_path_results = '~/Dropbox/mHM/mhm_experiments/2023_05_platform_runs'
-# main_path_input   = '~/Dropbox/mhm_data_platform'
 main_path_input   = '~/Dropbox/Data/mhm_data_platform'
 
 simulations = data.frame(rbind(c(exp_folder_name='historical_run_macro_basins',
@@ -471,19 +469,14 @@ for (j in 1:nexp){
   } 
 }
 
-# dev.new()
-# plot(data_platform_yr$pet_mm_yr[data_platform_yr$sim_short_name=='hist_cr2met_et0hs_lai_sat'],data_platform_yr$pet_mm_yr[data_platform_yr$sim_short_name=='hist_cr2met_et0hsmod_lai_sat'])
-# 
-# dev.new()
-# plot(data_platform_mon$pet_mm_mon[data_platform_mon$sim_short_name=='hist_cr2met_et0hs_lai_sat']-data_platform_mon$pet_mm_mon[data_platform_mon$sim_short_name=='hist_cr2met_et0hsmod_lai_sat'])
 ids_macro_basin_platform= unique(data_platform_mon_LTM$gauge_id)
 basin       <- readOGR('~/Dropbox/Research_projects/AA_CAMELS_CL/Updating_CAMELScl/v2021/processed_data/v2021_12/boundaries',layer='catchments_camels_cl_v2021')
 platform_macro_basin <- basin[basin$gauge_id %in% ids_macro_basin_platform,]
-path        <- "results_processed"
+path        <- "results"
 writeOGR(obj=platform_macro_basin, layer = 'platform_macro_basin', dsn=path , driver="ESRI Shapefile",overwrite_layer = TRUE)
 
 
-write.csv(data_platform_mon,file=paste0('results_processed','/data_macrobasin_platform_mon.csv'),row.names = FALSE)
-write.csv(data_platform_yr,file=paste0('results_processed','/data_macrobasin_platform_yr.csv'),row.names = FALSE)
-write.csv(data_platform_mon_LTM,file=paste0('results_processed','/data_macrobasin_platform_mon_LTM.csv'),row.names = FALSE)
+write.csv(data_platform_mon,file=paste0('results/data_macrobasin_platform_mon.csv'),row.names = FALSE)
+write.csv(data_platform_yr,file=paste0('results/data_macrobasin_platform_yr.csv'),row.names = FALSE)
+write.csv(data_platform_mon_LTM,file=paste0('results/data_macrobasin_platform_mon_LTM.csv'),row.names = FALSE)
 
