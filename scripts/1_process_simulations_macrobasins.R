@@ -14,6 +14,9 @@ library(reshape2)
 source('~/Dropbox/mHM/mHM_results/mhm_read_functions.R')
 source('aux_init_variables.R')
 
+dir.create('../figs')
+dir.create('../results')
+
 ############ SIMULATION HISTORICA #######
 main_path_results = '~/Dropbox/mHM/mhm_experiments/2023_05_platform_runs'
 main_path_input   = '~/Dropbox/Data/mhm_data_platform'
@@ -374,7 +377,7 @@ for (j in 1:nexp){
     data_platform_yr = structure(rbind(data_platform_yr,temp_yr),.Names = names(data_platform_yr))
     
     
-    path_figs = paste0('figs/sim_',sim_short_name,'_qsim_gauge_',i,'.pdf')
+    path_figs = paste0('../figs/sim_',sim_short_name,'_qsim_gauge_',i,'.pdf')
     
     # processing historical simulations
     
@@ -472,11 +475,11 @@ for (j in 1:nexp){
 ids_macro_basin_platform= unique(data_platform_mon_LTM$gauge_id)
 basin       <- readOGR('~/Dropbox/Research_projects/AA_CAMELS_CL/Updating_CAMELScl/v2021/processed_data/v2021_12/boundaries',layer='catchments_camels_cl_v2021')
 platform_macro_basin <- basin[basin$gauge_id %in% ids_macro_basin_platform,]
-path        <- "results"
+path        <- "../results"
 writeOGR(obj=platform_macro_basin, layer = 'platform_macro_basin', dsn=path , driver="ESRI Shapefile",overwrite_layer = TRUE)
 
 
-write.csv(data_platform_mon,file=paste0('results/data_macrobasin_platform_mon.csv'),row.names = FALSE)
-write.csv(data_platform_yr,file=paste0('results/data_macrobasin_platform_yr.csv'),row.names = FALSE)
-write.csv(data_platform_mon_LTM,file=paste0('results/data_macrobasin_platform_mon_LTM.csv'),row.names = FALSE)
+write.csv(data_platform_mon,file=paste0('../results/data_macrobasin_platform_mon.csv'),row.names = FALSE)
+write.csv(data_platform_yr,file=paste0('../results/data_macrobasin_platform_yr.csv'),row.names = FALSE)
+write.csv(data_platform_mon_LTM,file=paste0('../results/data_macrobasin_platform_mon_LTM.csv'),row.names = FALSE)
 

@@ -1,7 +1,5 @@
 # initialize variables
 load('~/Dropbox/Research_projects/AA_CAMELS_CL/Updating_CAMELScl/v2021/processed_data/v2021_12/camels_v2021_attributes.RData')
-dir.create('figs')
-dir.create('results_processed')
 
 data_platform_mon = data.frame(gauge_id=numeric(0),
                                gauge_name=numeric(0),
