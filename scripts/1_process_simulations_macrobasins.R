@@ -129,10 +129,20 @@ for (j in 1:nexp){
     qsim_mon_LTM_1960_2020  = monthlyfunction(window(qsim_mon, start = dini, end = dend),FUN=mean)
     et_mon_LTM_1960_2020    = monthlyfunction(window(et_mon, start = dini, end = dend),FUN=mean)
 
+    pr_yr_LTM_1960_2020    = sum(pr_mon_LTM_1960_2020)
+    pet_yr_LTM_1960_2020   = sum(pet_mon_LTM_1960_2020)
+    tmin_yr_LTM_1960_2020  = mean(tmin_mon_LTM_1960_2020)
+    tmax_yr_LTM_1960_2020  = mean(tmax_mon_LTM_1960_2020)
+    tavg_yr_LTM_1960_2020  = mean(tavg_mon_LTM_1960_2020)
+    qsim_yr_LTM_1960_2020  = mean(qsim_mon_LTM_1960_2020)
+    et_yr_LTM_1960_2020    = sum(et_mon_LTM_1960_2020)
+    
     if (sum(!is.na(window(qobs_mon, start = dini, end = dend)))/length(is.na(window(qobs_mon, start = dini, end = dend)))>0.8){
     qobs_mon_LTM_1960_2020  = monthlyfunction(window(qobs_mon, start = dini, end = dend),FUN=mean,na.rm=T)
+    qobs_yr_LTM_1960_2020   = mean(qobs_mon_LTM_1960_2020)
     }else{
     qobs_mon_LTM_1960_2020  = monthlyfunction(window(qobs_mon, start = dini, end = dend),FUN=mean,na.rm=F)
+    qobs_yr_LTM_1960_2020   = mean(qobs_mon_LTM_1960_2020)
     }
     
     dini='1960-01-01'
@@ -145,10 +155,20 @@ for (j in 1:nexp){
     qsim_mon_LTM_1960_1990  = monthlyfunction(window(qsim_mon, start = dini, end = dend),FUN=mean)
     et_mon_LTM_1960_1990    = monthlyfunction(window(et_mon, start = dini, end = dend),FUN=mean)
 
+    pr_yr_LTM_1960_1990    = sum(pr_mon_LTM_1960_1990)
+    pet_yr_LTM_1960_1990   = sum(pet_mon_LTM_1960_1990)
+    tmin_yr_LTM_1960_1990  = mean(tmin_mon_LTM_1960_1990)
+    tmax_yr_LTM_1960_1990  = mean(tmax_mon_LTM_1960_1990)
+    tavg_yr_LTM_1960_1990  = mean(tavg_mon_LTM_1960_1990)
+    qsim_yr_LTM_1960_1990  = mean(qsim_mon_LTM_1960_1990)
+    et_yr_LTM_1960_1990    = sum(et_mon_LTM_1960_1990)
+    
     if (sum(!is.na(window(qobs_mon, start = dini, end = dend)))/length(is.na(window(qobs_mon, start = dini, end = dend)))>0.8){
       qobs_mon_LTM_1960_1990  = monthlyfunction(window(qobs_mon, start = dini, end = dend),FUN=mean,na.rm=T)
+      qobs_yr_LTM_1960_1990   = mean(qobs_mon_LTM_1960_1990)
     }else{
       qobs_mon_LTM_1960_1990  = monthlyfunction(window(qobs_mon, start = dini, end = dend),FUN=mean,na.rm=F)
+      qobs_yr_LTM_1960_1990   = mean(qobs_mon_LTM_1960_1990)
     }
     
     dini='1990-01-01'
@@ -161,10 +181,20 @@ for (j in 1:nexp){
     qsim_mon_LTM_1990_2020  = monthlyfunction(window(qsim_mon, start = dini, end = dend),FUN=mean)
     et_mon_LTM_1990_2020    = monthlyfunction(window(et_mon, start = dini, end = dend),FUN=mean)
 
+    pr_yr_LTM_1990_2020    = sum(pr_mon_LTM_1990_2020)
+    pet_yr_LTM_1990_2020   = sum(pet_mon_LTM_1990_2020)
+    tmin_yr_LTM_1990_2020  = mean(tmin_mon_LTM_1990_2020)
+    tmax_yr_LTM_1990_2020  = mean(tmax_mon_LTM_1990_2020)
+    tavg_yr_LTM_1990_2020  = mean(tavg_mon_LTM_1990_2020)
+    qsim_yr_LTM_1990_2020  = mean(qsim_mon_LTM_1990_2020)
+    et_yr_LTM_1990_2020    = sum(et_mon_LTM_1990_2020)
+
     if (sum(!is.na(window(qobs_mon, start = dini, end = dend)))/length(is.na(window(qobs_mon, start = dini, end = dend)))>0.8){
       qobs_mon_LTM_1990_2020  = monthlyfunction(window(qobs_mon, start = dini, end = dend),FUN=mean,na.rm=T)
+      qobs_yr_LTM_1990_2020   = mean(qobs_mon_LTM_1990_2020)
     }else{
       qobs_mon_LTM_1990_2020  = monthlyfunction(window(qobs_mon, start = dini, end = dend),FUN=mean,na.rm=F)
+      qobs_yr_LTM_1990_2020   = mean(qobs_mon_LTM_1990_2020)
     }
     
     pr_mon_LTM_2040_2070    = nazoo
@@ -184,6 +214,24 @@ for (j in 1:nexp){
     qsim_mon_LTM_2070_2100  = nazoo
     et_mon_LTM_2070_2100    = nazoo
     qobs_mon_LTM_2070_2100  = nazoo
+    
+    pr_yr_LTM_2040_2070    = NA
+    pet_yr_LTM_2040_2070   = NA
+    tmin_yr_LTM_2040_2070  = NA
+    tmax_yr_LTM_2040_2070  = NA
+    tavg_yr_LTM_2040_2070  = NA
+    qsim_yr_LTM_2040_2070  = NA
+    et_yr_LTM_2040_2070    = NA
+    qobs_yr_LTM_2040_2070  = NA
+    
+    pr_yr_LTM_2070_2100    = NA
+    pet_yr_LTM_2070_2100   = NA
+    tmin_yr_LTM_2070_2100  = NA
+    tmax_yr_LTM_2070_2100  = NA
+    tavg_yr_LTM_2070_2100  = NA
+    qsim_yr_LTM_2070_2100  = NA
+    et_yr_LTM_2070_2100    = NA
+    qobs_yr_LTM_2070_2100  = NA
     
     }else{
       pr_mon_LTM_1960_2020=nazoo
@@ -213,6 +261,33 @@ for (j in 1:nexp){
       qobs_mon_LTM_1990_2020=nazoo
       qsim_mon_LTM_1990_2020=nazoo
       
+      pr_yr_LTM_1960_2020=NA
+      et_yr_LTM_1960_2020=NA
+      tmin_yr_LTM_1960_2020=NA
+      tmax_yr_LTM_1960_2020=NA
+      tavg_yr_LTM_1960_2020=NA
+      pet_yr_LTM_1960_2020=NA
+      qobs_yr_LTM_1960_2020=NA
+      qsim_yr_LTM_1960_2020=NA
+      
+      pr_yr_LTM_1960_1990=NA
+      et_yr_LTM_1960_1990=NA
+      tmin_yr_LTM_1960_1990=NA
+      tmax_yr_LTM_1960_1990=NA
+      tavg_yr_LTM_1960_1990=NA
+      pet_yr_LTM_1960_1990=NA
+      qobs_yr_LTM_1960_1990=NA
+      qsim_yr_LTM_1960_1990=NA
+      
+      pr_yr_LTM_1990_2020=NA
+      et_yr_LTM_1990_2020=NA
+      tmin_yr_LTM_1990_2020=NA
+      tmax_yr_LTM_1990_2020=NA
+      tavg_yr_LTM_1990_2020=NA
+      pet_yr_LTM_1990_2020=NA
+      qobs_yr_LTM_1990_2020=NA
+      qsim_yr_LTM_1990_2020=NA
+      
       dini='2040-01-01'
       dend='2070-12-31'
       pr_mon_LTM_2040_2070    = monthlyfunction(window(pr_mon, start = dini, end = dend),FUN=mean)
@@ -223,7 +298,16 @@ for (j in 1:nexp){
       qsim_mon_LTM_2040_2070  = monthlyfunction(window(qsim_mon, start = dini, end = dend),FUN=mean)
       et_mon_LTM_2040_2070    = monthlyfunction(window(et_mon, start = dini, end = dend),FUN=mean)
       qobs_mon_LTM_2040_2070  = nazoo
-    
+
+      pr_yr_LTM_2040_2070    = sum(pr_mon_LTM_2040_2070)
+      pet_yr_LTM_2040_2070   = sum(pet_mon_LTM_2040_2070)
+      tmin_yr_LTM_2040_2070  = mean(tmin_mon_LTM_2040_2070)
+      tmax_yr_LTM_2040_2070  = mean(tmax_mon_LTM_2040_2070)
+      tavg_yr_LTM_2040_2070  = mean(tavg_mon_LTM_2040_2070)
+      qsim_yr_LTM_2040_2070  = mean(qsim_mon_LTM_2040_2070)
+      et_yr_LTM_2040_2070    = sum(et_mon_LTM_2040_2070)
+      qobs_yr_LTM_2040_2070  = nazoo
+      
       dini='2070-01-01'
       dend='2099-12-31'
       pr_mon_LTM_2070_2100    = monthlyfunction(window(pr_mon, start = dini, end = dend),FUN=mean)
@@ -234,9 +318,24 @@ for (j in 1:nexp){
       qsim_mon_LTM_2070_2100  = monthlyfunction(window(qsim_mon, start = dini, end = dend),FUN=mean)
       et_mon_LTM_2070_2100    = monthlyfunction(window(et_mon, start = dini, end = dend),FUN=mean)
       qobs_mon_LTM_2070_2100  = nazoo
-    
+
+      pr_yr_LTM_2070_2100    = sum(pr_mon_LTM_2070_2100)
+      pet_yr_LTM_2070_2100   = sum(pet_mon_LTM_2070_2100)
+      tmin_yr_LTM_2070_2100  = mean(tmin_mon_LTM_2070_2100)
+      tmax_yr_LTM_2070_2100  = mean(tmax_mon_LTM_2070_2100)
+      tavg_yr_LTM_2070_2100  = mean(tavg_mon_LTM_2070_2100)
+      qsim_yr_LTM_2070_2100  = mean(qsim_mon_LTM_2070_2100)
+      et_yr_LTM_2070_2100    = sum(et_mon_LTM_2070_2100)
+      qobs_yr_LTM_2070_2100  = nazoo
+      
     }
     
+    
+    # conversion factors
+    m3s_to_mm_mon = (1/attrib_i$area_km2)*(1/1000000)*(3600*24*30)*1000
+    m3s_to_mm_yr  = (1/attrib_i$area_km2)*(1/1000000)*(3600*24*365)*1000
+    
+    # temporal arrays with basin results
     temp_mon          = data.frame(gauge_id=attrib_i$gauge_id,
                                    gauge_name=attrib_i$gauge_name,
                                    area_km2=attrib_i$area_km2,
@@ -248,19 +347,16 @@ for (j in 1:nexp){
                                    tavg_C_mon=tavg_mon,
                                    pet_mm_mon=pet_mon,
                                    qobs_m3s=qobs_mon,
-                                   qobs_mm_mon=NA,
+                                   qobs_mm_mon=qobs_mon*m3s_to_mm_mon,
                                    qsim_m3s=qsim_mon,
-                                   qsim_mm_mon=NA,
+                                   qsim_mm_mon=qsim_mon*m3s_to_mm_mon,
                                    sim_short_name=sim_short_name,
                                    sim_pr_name=sim_pr_name,
                                    sim_pet_name=sim_pet_name,
                                    sim_txn_name=sim_txn_name,
                                    sim_lai_name=sim_lai_name
     )
-    
-    m3s_to_mm_mon        = (1/attrib_i$area_km2)*(1/1000000)*(3600*24*30)*1000
-    temp_mon$qsim_mm_mon = temp_mon$qsim_m3s*m3s_to_mm_mon
-    temp_mon$qobs_mm_mon = temp_mon$qobs_m3s*m3s_to_mm_mon
+
     
     temp_yr           = data.frame(gauge_id=attrib_i$gauge_id,
                                    gauge_name=attrib_i$gauge_name,
@@ -273,25 +369,23 @@ for (j in 1:nexp){
                                    tavg_C_yr=tavg_yr,
                                    pet_mm_yr=pet_yr,
                                    qobs_m3s_yr=qobs_yr,
-                                   qobs_mm_yr=NA,
+                                   qobs_mm_yr=qobs_yr*m3s_to_mm_yr,
                                    qsim_m3s_yr=qsim_yr,
-                                   qsim_mm_yr=NA,
+                                   qsim_mm_yr=qsim_yr*m3s_to_mm_yr,
                                    sim_short_name=sim_short_name,
                                    sim_pr_name=sim_pr_name,
                                    sim_pet_name=sim_pet_name,
                                    sim_txn_name=sim_txn_name,
                                    sim_lai_name=sim_lai_name
     )
+
     
-    m3s_to_mm_yr       = (1/attrib_i$area_km2)*(1/1000000)*(3600*24*365)*1000
-    temp_yr$qsim_mm_yr = temp_yr$qsim_m3s*m3s_to_mm_yr
-    temp_yr$qobs_mm_yr = temp_yr$qobs_m3s*m3s_to_mm_yr
     
     
     temp_mon_LTM          = data.frame(gauge_id=attrib_i$gauge_id,
                                        gauge_name=attrib_i$gauge_name,
                                        area_km2=attrib_i$area_km2,
-                                       date=time(pr_mon_LTM_1960_2020),
+                                       indice_aridez=round(pet_yr_LTM_1960_2020/pr_yr_LTM_1960_2020,2),
                                        
                                        sim_short_name=sim_short_name,
                                        sim_pr_name=sim_pr_name,
@@ -299,79 +393,67 @@ for (j in 1:nexp){
                                        sim_txn_name=sim_txn_name,
                                        sim_lai_name=sim_lai_name,
                                        
-                                       pr_mm_mon_LTM_1960_2020=pr_mon_LTM_1960_2020,
-                                       et_mm_mon_LTM_1960_2020=et_mon_LTM_1960_2020,
-                                       tmin_C_mon_LTM_1960_2020=tmin_mon_LTM_1960_2020,
-                                       tmax_C_mon_LTM_1960_2020=tmax_mon_LTM_1960_2020,
-                                       tavg_C_mon_LTM_1960_2020=tavg_mon_LTM_1960_2020,
-                                       pet_mm_mon_LTM_1960_2020=pet_mon_LTM_1960_2020,
-                                       qobs_m3s_mon_LTM_1960_2020=qobs_mon_LTM_1960_2020,
-                                       qobs_mm_mon_LTM_1960_2020=NA,
-                                       qsim_m3s_mon_LTM_1960_2020=qsim_mon_LTM_1960_2020,
-                                       qsim_mm_mon_LTM_1960_2020=NA,
-                                       
-                                       pr_mm_mon_LTM_1960_1990=pr_mon_LTM_1960_1990,
-                                       et_mm_mon_LTM_1960_1990=et_mon_LTM_1960_1990,
-                                       tmin_C_mon_LTM_1960_1990=tmin_mon_LTM_1960_1990,
-                                       tmax_C_mon_LTM_1960_1990=tmax_mon_LTM_1960_1990,
-                                       tavg_C_mon_LTM_1960_1990=tavg_mon_LTM_1960_1990,
-                                       pet_mm_mon_LTM_1960_1990=pet_mon_LTM_1960_1990,
-                                       qobs_m3s_mon_LTM_1960_1990=qobs_mon_LTM_1960_1990,
-                                       qobs_mm_mon_LTM_1960_1990=NA,
-                                       qsim_m3s_mon_LTM_1960_1990=qsim_mon_LTM_1960_1990,
-                                       qsim_mm_mon_LTM_1960_1990=NA,
-                                       
-                                       pr_mm_mon_LTM_1990_2020=pr_mon_LTM_1990_2020,
-                                       et_mm_mon_LTM_1990_2020=et_mon_LTM_1990_2020,
-                                       tmin_C_mon_LTM_1990_2020=tmin_mon_LTM_1990_2020,
-                                       tmax_C_mon_LTM_1990_2020=tmax_mon_LTM_1990_2020,
-                                       tavg_C_mon_LTM_1990_2020=tavg_mon_LTM_1990_2020,
-                                       pet_mm_mon_LTM_1990_2020=pet_mon_LTM_1990_2020,
-                                       qobs_m3s_mon_LTM_1990_2020=qobs_mon_LTM_1990_2020,
-                                       qobs_mm_mon_LTM_1990_2020=NA,
-                                       qsim_m3s_mon_LTM_1990_2020=qsim_mon_LTM_1990_2020,
-                                       qsim_mm_mon_LTM_1990_2020=NA,
-
-                                       pr_mm_mon_LTM_2040_2070=pr_mon_LTM_2040_2070,
-                                       et_mm_mon_LTM_2040_2070=et_mon_LTM_2040_2070,
-                                       tmin_C_mon_LTM_2040_2070=tmin_mon_LTM_2040_2070,
-                                       tmax_C_mon_LTM_2040_2070=tmax_mon_LTM_2040_2070,
-                                       tavg_C_mon_LTM_2040_2070=tavg_mon_LTM_2040_2070,
-                                       pet_mm_mon_LTM_2040_2070=pet_mon_LTM_2040_2070,
-                                       qobs_m3s_mon_LTM_2040_2070=qobs_mon_LTM_2040_2070,
-                                       qobs_mm_mon_LTM_2040_2070=NA,
-                                       qsim_m3s_mon_LTM_2040_2070=qsim_mon_LTM_2040_2070,
-                                       qsim_mm_mon_LTM_2040_2070=NA,
-                                       
-                                       pr_mm_mon_LTM_2070_2100=pr_mon_LTM_2070_2100,
-                                       et_mm_mon_LTM_2070_2100=et_mon_LTM_2070_2100,
-                                       tmin_C_mon_LTM_2070_2100=tmin_mon_LTM_2070_2100,
-                                       tmax_C_mon_LTM_2070_2100=tmax_mon_LTM_2070_2100,
-                                       tavg_C_mon_LTM_2070_2100=tavg_mon_LTM_2070_2100,
-                                       pet_mm_mon_LTM_2070_2100=pet_mon_LTM_2070_2100,
-                                       qobs_m3s_mon_LTM_2070_2100=qobs_mon_LTM_2070_2100,
-                                       qobs_mm_mon_LTM_2070_2100=NA,
-                                       qsim_m3s_mon_LTM_2070_2100=qsim_mon_LTM_2070_2100,
-                                       qsim_mm_mon_LTM_2070_2100=NA
+                                       date=c(time(pr_mon_LTM_1960_2020),as.factor('Annual')),
                                       
+                                       pr_mm_LTM_1960_2020=c(coredata(pr_mon_LTM_1960_2020),pr_yr_LTM_1960_2020),
+                                       et_mm_LTM_1960_2020=c(coredata(et_mon_LTM_1960_2020),et_yr_LTM_1960_2020),
+                                       tmin_C_LTM_1960_2020=c(coredata(tmin_mon_LTM_1960_2020),tmin_yr_LTM_1960_2020),
+                                       tmax_C_LTM_1960_2020=c(coredata(tmax_mon_LTM_1960_2020),tmax_yr_LTM_1960_2020),
+                                       tavg_C_LTM_1960_2020=c(coredata(tavg_mon_LTM_1960_2020),tavg_yr_LTM_1960_2020),
+                                       pet_mm_LTM_1960_2020=c(coredata(pet_mon_LTM_1960_2020),pet_yr_LTM_1960_2020),
+                                       qobs_m3s_LTM_1960_2020=c(coredata(qobs_mon_LTM_1960_2020),qobs_yr_LTM_1960_2020),
+                                       qobs_mm_LTM_1960_2020=c(coredata(qobs_mon_LTM_1960_2020)*m3s_to_mm_mon,qobs_yr_LTM_1960_2020*m3s_to_mm_yr),
+                                       qsim_m3s_LTM_1960_2020=c(coredata(qsim_mon_LTM_1960_2020),qsim_yr_LTM_1960_2020),
+                                       qsim_mm_LTM_1960_2020=c(coredata(qsim_mon_LTM_1960_2020)*m3s_to_mm_mon,qsim_yr_LTM_1960_2020*m3s_to_mm_yr),
+                                       
+                                       pr_mm_LTM_1960_1990=c(coredata(pr_mon_LTM_1960_1990),pr_yr_LTM_1960_1990),
+                                       et_mm_LTM_1960_1990=c(coredata(et_mon_LTM_1960_1990),et_yr_LTM_1960_1990),
+                                       tmin_C_LTM_1960_1990=c(coredata(tmin_mon_LTM_1960_1990),tmin_yr_LTM_1960_1990),
+                                       tmax_C_LTM_1960_1990=c(coredata(tmax_mon_LTM_1960_1990),tmax_yr_LTM_1960_1990),
+                                       tavg_C_LTM_1960_1990=c(coredata(tavg_mon_LTM_1960_1990),tavg_yr_LTM_1960_1990),
+                                       pet_mm_LTM_1960_1990=c(coredata(pet_mon_LTM_1960_1990),pet_yr_LTM_1960_1990),
+                                       qobs_m3s_LTM_1960_1990=c(coredata(qobs_mon_LTM_1960_1990),qobs_yr_LTM_1960_1990),
+                                       qobs_mm_LTM_1960_1990=c(coredata(qobs_mon_LTM_1960_1990)*m3s_to_mm_mon,qobs_yr_LTM_1960_1990*m3s_to_mm_yr),
+                                       qsim_m3s_LTM_1960_1990=c(coredata(qsim_mon_LTM_1960_1990),qsim_yr_LTM_1960_1990),
+                                       qsim_mm_LTM_1960_1990=c(coredata(qsim_mon_LTM_1960_1990)*m3s_to_mm_mon,qsim_yr_LTM_1960_1990*m3s_to_mm_yr),
+                                       
+                                       pr_mm_LTM_1990_2020=c(coredata(pr_mon_LTM_1990_2020),pr_yr_LTM_1990_2020),
+                                       et_mm_LTM_1990_2020=c(coredata(et_mon_LTM_1990_2020),et_yr_LTM_1990_2020),
+                                       tmin_C_LTM_1990_2020=c(coredata(tmin_mon_LTM_1990_2020),tmin_yr_LTM_1990_2020),
+                                       tmax_C_LTM_1990_2020=c(coredata(tmax_mon_LTM_1990_2020),tmax_yr_LTM_1990_2020),
+                                       tavg_C_LTM_1990_2020=c(coredata(tavg_mon_LTM_1990_2020),tavg_yr_LTM_1990_2020),
+                                       pet_mm_LTM_1990_2020=c(coredata(pet_mon_LTM_1990_2020),pet_yr_LTM_1990_2020),
+                                       qobs_m3s_LTM_1990_2020=c(coredata(qobs_mon_LTM_1990_2020),qobs_yr_LTM_1990_2020),
+                                       qobs_mm_LTM_1990_2020=c(coredata(qobs_mon_LTM_1990_2020)*m3s_to_mm_mon,qobs_yr_LTM_1990_2020*m3s_to_mm_yr),
+                                       qsim_m3s_LTM_1990_2020=c(coredata(qsim_mon_LTM_1990_2020),qsim_yr_LTM_1990_2020),
+                                       qsim_mm_LTM_1990_2020=c(coredata(qsim_mon_LTM_1990_2020)*m3s_to_mm_mon,qsim_yr_LTM_1990_2020*m3s_to_mm_yr),
+                                       
+                                       pr_mm_LTM_2040_2070=c(coredata(pr_mon_LTM_2040_2070),pr_yr_LTM_2040_2070),
+                                       et_mm_LTM_2040_2070=c(coredata(et_mon_LTM_2040_2070),et_yr_LTM_2040_2070),
+                                       tmin_C_LTM_2040_2070=c(coredata(tmin_mon_LTM_2040_2070),tmin_yr_LTM_2040_2070),
+                                       tmax_C_LTM_2040_2070=c(coredata(tmax_mon_LTM_2040_2070),tmax_yr_LTM_2040_2070),
+                                       tavg_C_LTM_2040_2070=c(coredata(tavg_mon_LTM_2040_2070),tavg_yr_LTM_2040_2070),
+                                       pet_mm_LTM_2040_2070=c(coredata(pet_mon_LTM_2040_2070),pet_yr_LTM_2040_2070),
+                                       qobs_m3s_LTM_2040_2070=c(coredata(qobs_mon_LTM_2040_2070),qobs_yr_LTM_2040_2070),
+                                       qobs_mm_LTM_2040_2070=c(coredata(qobs_mon_LTM_2040_2070)*m3s_to_mm_mon,qobs_yr_LTM_2040_2070*m3s_to_mm_yr),
+                                       qsim_m3s_LTM_2040_2070=c(coredata(qsim_mon_LTM_2040_2070),qsim_yr_LTM_2040_2070),
+                                       qsim_mm_LTM_2040_2070=c(coredata(qsim_mon_LTM_2040_2070)*m3s_to_mm_mon,qsim_yr_LTM_2040_2070*m3s_to_mm_yr),
+                                       
+                                       pr_mm_LTM_2070_2100=c(coredata(pr_mon_LTM_2070_2100),pr_yr_LTM_2070_2100),
+                                       et_mm_LTM_2070_2100=c(coredata(et_mon_LTM_2070_2100),et_yr_LTM_2070_2100),
+                                       tmin_C_LTM_2070_2100=c(coredata(tmin_mon_LTM_2070_2100),tmin_yr_LTM_2070_2100),
+                                       tmax_C_LTM_2070_2100=c(coredata(tmax_mon_LTM_2070_2100),tmax_yr_LTM_2070_2100),
+                                       tavg_C_LTM_2070_2100=c(coredata(tavg_mon_LTM_2070_2100),tavg_yr_LTM_2070_2100),
+                                       pet_mm_LTM_2070_2100=c(coredata(pet_mon_LTM_2070_2100),pet_yr_LTM_2070_2100),
+                                       qobs_m3s_LTM_2070_2100=c(coredata(qobs_mon_LTM_2070_2100),qobs_yr_LTM_2070_2100),
+                                       qobs_mm_LTM_2070_2100=c(coredata(qobs_mon_LTM_2070_2100)*m3s_to_mm_mon,qobs_yr_LTM_2070_2100*m3s_to_mm_yr),
+                                       qsim_m3s_LTM_2070_2100=c(coredata(qsim_mon_LTM_2070_2100),qsim_yr_LTM_2070_2100),
+                                       qsim_mm_LTM_2070_2100=c(coredata(qsim_mon_LTM_2070_2100)*m3s_to_mm_mon,qsim_yr_LTM_2070_2100*m3s_to_mm_yr)
+                                       
 
     )
     
-    temp_mon_LTM$qsim_mm_mon_LTM_1960_2020 = temp_mon_LTM$qsim_m3s_mon_LTM_1960_2020*m3s_to_mm_mon
-    temp_mon_LTM$qobs_mm_mon_LTM_1960_2020 = temp_mon_LTM$qobs_m3s_mon_LTM_1960_2020*m3s_to_mm_mon
-    
-    temp_mon_LTM$qsim_mm_mon_LTM_1960_1990 = temp_mon_LTM$qsim_m3s_mon_LTM_1960_1990*m3s_to_mm_mon
-    temp_mon_LTM$qobs_mm_mon_LTM_1960_1990 = temp_mon_LTM$qobs_m3s_mon_LTM_1960_1990*m3s_to_mm_mon
 
-    temp_mon_LTM$qsim_mm_mon_LTM_1990_2020 = temp_mon_LTM$qsim_m3s_mon_LTM_1990_2020*m3s_to_mm_mon
-    temp_mon_LTM$qobs_mm_mon_LTM_1990_2020 = temp_mon_LTM$qobs_m3s_mon_LTM_1990_2020*m3s_to_mm_mon
-
-    temp_mon_LTM$qsim_mm_mon_LTM_2040_2070 = temp_mon_LTM$qsim_m3s_mon_LTM_2040_2070*m3s_to_mm_mon
-    temp_mon_LTM$qobs_mm_mon_LTM_2040_2070 = temp_mon_LTM$qobs_m3s_mon_LTM_2040_2070*m3s_to_mm_mon
-
-    temp_mon_LTM$qsim_mm_mon_LTM_2070_2100 = temp_mon_LTM$qsim_m3s_mon_LTM_2070_2100*m3s_to_mm_mon
-    temp_mon_LTM$qobs_mm_mon_LTM_2070_2100 = temp_mon_LTM$qobs_m3s_mon_LTM_2070_2100*m3s_to_mm_mon
-    
     data_platform_mon = structure(rbind(data_platform_mon,temp_mon),.Names = names(data_platform_mon))
     data_platform_mon_LTM = structure(rbind(data_platform_mon_LTM,temp_mon_LTM),.Names = names(data_platform_mon_LTM))
     data_platform_yr = structure(rbind(data_platform_yr,temp_yr),.Names = names(data_platform_yr))
@@ -393,34 +475,41 @@ for (j in 1:nexp){
     box(cex=.8)
     lines(time(qsim_mon),qsim_mon, col = "dodgerblue", lwd = 1.2, type = "l")
     lines(time(qsim_mon),qobs_mon, col = "grey27", lwd = 1, type = "l")
-    title(main = paste0(attrib_i$gauge_name, ', Lat = ', round(attrib_i$gauge_lat,1), ' Mean Elev = ', round(attrib_i$mean_elev,0),'\n',
-                        'Sim: ',sim_short_name,'Sim. period: ', date_ini, '-',date_end, ' gauge_id: ',i), cex.main = 0.7)
+    title(main = paste0(attrib_i$gauge_name, '\n',
+                        'Lat = ', round(attrib_i$gauge_lat,1), ', Mean Elev = ', round(attrib_i$mean_elev,0), 
+                        ', Mean precip 1960-2020 (mm/yr) = ', round(temp_mon_LTM$pr_mm_LTM_1960_2020[temp_mon_LTM$date=='Annual'],0),
+                        ', Índice Aridez 1960-2020 = ', round(unique(temp_mon_LTM$indice_aridez),2), '\n',
+                        'Sim: ',sim_short_name,', Sim. period: ', date_ini, '-',date_end, ' gauge_id: ',i), cex.main = 0.7)
     title(xlab = "", ylab = "Streamflow (m3/s)", cex.lab = 0.8)
     xticks <- seq((as.Date(start(qsim_mon))), (as.Date(end(qsim_mon))), by = "month")
     legend("topright", legend = c("Sim", "Obs"), col = c("dodgerblue", "grey27"), lwd = 1, cex = 0.8, bty = "n")
     axis(1, at = xticks, labels = format(as.POSIXct(xticks), "%m-%Y"), tck = 0, cex.lab=.9,cex.axis=.8)
     mtext(paste0('daily KGE (1965-2021)= ', as.numeric(gof(qsim_mon,qobs_mon)["KGE",])),cex=.7,line=-1,adj = 0.02)
     
-    plot(1:12,temp_mon_LTM$qsim_mm_mon_LTM_1960_1990, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
-         ylim = range(0,temp_mon_LTM$pr_mm_mon_LTM_1960_1990,temp_mon_LTM$pr_mm_mon_LTM_1990_2020))
-    lines(1:12,temp_mon_LTM$qobs_mm_mon_LTM_1960_1990, col = "black", lwd = 1.2, type = "l")
-    lines(1:12,temp_mon_LTM$pr_mm_mon_LTM_1960_1990, col = "blue", lwd = 1.2, type = "l")
-    lines(1:12,temp_mon_LTM$et_mm_mon_LTM_1960_1990, col = "orange", lwd = 1.2, type = "l")
+    ind=temp_mon_LTM$date!='Annual'
+    df_plot=temp_mon_LTM[ind,]
+    plot(1:12,df_plot$qsim_mm_LTM_1960_1990, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
+         ylim = range(0,df_plot$pr_mm_LTM_1960_1990,df_plot$pr_mm_LTM_1990_2020,df_plot$pet_mm_LTM_1960_1990,df_plot$pet_mm_LTM_1990_2020))
+    lines(1:12,df_plot$qobs_mm_LTM_1960_1990, col = "black", lwd = 1.2, type = "l")
+    lines(1:12,df_plot$pr_mm_LTM_1960_1990, col = "blue", lwd = 1.2, type = "l")
+    lines(1:12,df_plot$et_mm_LTM_1960_1990, col = "green", lwd = 1.2, type = "l")
+    lines(1:12,df_plot$pet_mm_LTM_1960_1990, col = "orange", lwd = 1.2, type = "l")
     title(main = 'Mean monthly flows 1960-1990', cex.main = 0.7)
     title(xlab = "", ylab = "Mean flow (mm)", cex.lab = 0.8)
     xticks <- time(pr_mon_LTM_1960_1990)
-    legend("topright", legend = c("Qsim", "Qobs","Pr","ET"), col = c("red", "black","blue","orange"), lwd = 1, cex = 0.8, bty = "n")
+    legend("topright", legend = c("Qsim", "Qobs","Pr","ET","PET"), col = c("red", "black","blue","green","orange"), lwd = 1, cex = 0.8, bty = "n")
     axis(1, at = 1:12, labels = time(pr_mon_LTM_1960_1990), tck = 0, cex.lab=.9,cex.axis=.8)
 
-    plot(1:12,temp_mon_LTM$qsim_mm_mon_LTM_1990_2020, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
-         ylim = range(0,temp_mon_LTM$pr_mm_mon_LTM_1960_1990,temp_mon_LTM$pr_mm_mon_LTM_1990_2020))
-    lines(1:12,temp_mon_LTM$qobs_mm_mon_LTM_1990_2020, col = "black", lwd = 1.2, type = "l")
-    lines(1:12,temp_mon_LTM$pr_mm_mon_LTM_1990_2020, col = "blue", lwd = 1.2, type = "l")
-    lines(1:12,temp_mon_LTM$et_mm_mon_LTM_1990_2020, col = "orange", lwd = 1.2, type = "l")
+    plot(1:12,df_plot$qsim_mm_LTM_1990_2020, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
+         ylim = range(0,df_plot$pr_mm_LTM_1960_1990,df_plot$pr_mm_LTM_1990_2020,df_plot$pet_mm_LTM_1960_1990,df_plot$pet_mm_LTM_1990_2020))
+    lines(1:12,df_plot$qobs_mm_LTM_1990_2020, col = "black", lwd = 1.2, type = "l")
+    lines(1:12,df_plot$pr_mm_LTM_1990_2020, col = "blue", lwd = 1.2, type = "l")
+    lines(1:12,df_plot$et_mm_LTM_1990_2020, col = "green", lwd = 1.2, type = "l")
+    lines(1:12,df_plot$pet_mm_LTM_1990_2020, col = "orange", lwd = 1.2, type = "l")
     title(main = 'Mean monthly flows 1990-2020', cex.main = 0.7)
     title(xlab = "", ylab = "Mean flow (mm)", cex.lab = 0.8)
     xticks <- time(pr_mon_LTM_1990_2020)
-    legend("topright", legend = c("Qsim", "Qobs","Pr","ET"), col = c("red", "black","blue","orange"), lwd = 1, cex = 0.8, bty = "n")
+    legend("topright", legend = c("Qsim", "Qobs","Pr","ET","PET"), col = c("red", "black","blue","green","orange"), lwd = 1, cex = 0.8, bty = "n")
     axis(1, at = 1:12, labels = time(pr_mon_LTM_1990_2020), tck = 0, cex.lab=.9,cex.axis=.8)
     
     dev.off()
@@ -436,33 +525,35 @@ for (j in 1:nexp){
       lines(time(qsim_mon),qsim_mon, col = "dodgerblue", lwd = 1.2, type = "l")
       lines(time(qsim_mon),qobs_mon, col = "grey27", lwd = 1, type = "l")
       title(main = paste0(attrib_i$gauge_name, ', Lat = ', round(attrib_i$gauge_lat,1), ' Mean Elev = ', round(attrib_i$mean_elev,0),'\n',
-                          'Sim: ',sim_short_name,'Sim. period: ', date_ini, '-',date_end, ' gauge_id: ',i), cex.main = 0.7)
+                          'Sim: ',sim_short_name,'Sim. period: ', date_ini, ' to ',date_end, ' gauge_id: ',i), cex.main = 0.7)
       title(xlab = "", ylab = "Streamflow (m3/s)", cex.lab = 0.8)
       xticks <- seq((as.Date(start(qsim_mon))), (as.Date(end(qsim_mon))), by = "month")
       legend("topright", legend = c("Sim", "Obs"), col = c("dodgerblue", "grey27"), lwd = 1, cex = 0.8, bty = "n")
       axis(1, at = xticks, labels = format(as.POSIXct(xticks), "%m-%Y"), tck = 0, cex.lab=.9,cex.axis=.8)
       mtext(paste0('daily KGE (1965-2021)= ', as.numeric(gof(qsim_mon,qobs_mon)["KGE",])),cex=.7,line=-1,adj = 0.02)
       
-      plot(1:12,temp_mon_LTM$qsim_mm_mon_LTM_2040_2070, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
-           ylim = range(0,temp_mon_LTM$pr_mm_mon_LTM_2040_2070,temp_mon_LTM$pr_mm_mon_LTM_2070_2100))
-      lines(1:12,temp_mon_LTM$qobs_mm_mon_LTM_2040_2070, col = "black", lwd = 1.2, type = "l")
-      lines(1:12,temp_mon_LTM$pr_mm_mon_LTM_2040_2070, col = "blue", lwd = 1.2, type = "l")
-      lines(1:12,temp_mon_LTM$et_mm_mon_LTM_2040_2070, col = "orange", lwd = 1.2, type = "l")
+      plot(1:12,df_plot$qsim_mm_LTM_2040_2070, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
+           ylim = range(0,df_plot$pr_mm_LTM_2040_2070,df_plot$pr_mm_LTM_2070_2100,df_plot$pet_mm_LTM_2040_2070,df_plot$pet_mm_LTM_2070_2100))
+      lines(1:12,df_plot$qobs_mm_LTM_2040_2070, col = "black", lwd = 1.2, type = "l")
+      lines(1:12,df_plot$pr_mm_LTM_2040_2070, col = "blue", lwd = 1.2, type = "l")
+      lines(1:12,df_plot$et_mm_LTM_2040_2070, col = "green", lwd = 1.2, type = "l")
+      lines(1:12,df_plot$pet_mm_LTM_2040_2070, col = "orange", lwd = 1.2, type = "l")
       title(main = 'Mean monthly flows 2040-2070', cex.main = 0.7)
       title(xlab = "", ylab = "Mean flow (mm)", cex.lab = 0.8)
       xticks <- time(pr_mon_LTM_2040_2070)
-      legend("topright", legend = c("Qsim", "Qobs","Pr","ET"), col = c("red", "black","blue","orange"), lwd = 1, cex = 0.8, bty = "n")
+      legend("topright", legend = c("Qsim", "Qobs","Pr","ET","PET"), col = c("red", "black","blue","green","orange"), lwd = 1, cex = 0.8, bty = "n")
       axis(1, at = 1:12, labels = time(pr_mon_LTM_2040_2070), tck = 0, cex.lab=.9,cex.axis=.8)
       
-      plot(1:12,temp_mon_LTM$qsim_mm_mon_LTM_2070_2100, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
-           ylim = range(0,temp_mon_LTM$pr_mm_mon_LTM_2040_2070,temp_mon_LTM$pr_mm_mon_LTM_2070_2100))
-      lines(1:12,temp_mon_LTM$qobs_mm_mon_LTM_2070_2100, col = "black", lwd = 1.2, type = "l")
-      lines(1:12,temp_mon_LTM$pr_mm_mon_LTM_2070_2100, col = "blue", lwd = 1.2, type = "l")
-      lines(1:12,temp_mon_LTM$et_mm_mon_LTM_2070_2100, col = "orange", lwd = 1.2, type = "l")
+      plot(1:12,df_plot$qsim_mm_LTM_2070_2100, col = "red", lwd = 1.2, type = "l",ylab="",xaxt='n',xlab='',
+           ylim = range(0,df_plot$pr_mm_LTM_2040_2070,df_plot$pr_mm_LTM_2070_2100,df_plot$pet_mm_LTM_2040_2070,df_plot$pet_mm_LTM_2070_2100))
+      lines(1:12,df_plot$qobs_mm_LTM_2070_2100, col = "black", lwd = 1.2, type = "l")
+      lines(1:12,df_plot$pr_mm_LTM_2070_2100, col = "blue", lwd = 1.2, type = "l")
+      lines(1:12,df_plot$et_mm_LTM_2070_2100, col = "green", lwd = 1.2, type = "l")
+      lines(1:12,df_plot$pet_mm_LTM_2070_2100, col = "orange", lwd = 1.2, type = "l")
       title(main = 'Mean monthly flows 2070-2100', cex.main = 0.7)
       title(xlab = "", ylab = "Mean flow (mm)", cex.lab = 0.8)
       xticks <- time(pr_mon_LTM_2070_2100)
-      legend("topright", legend = c("Qsim", "Qobs","Pr","ET"), col = c("red", "black","blue","orange"), lwd = 1, cex = 0.8, bty = "n")
+      legend("topright", legend = c("Qsim", "Qobs","Pr","ET","PET"), col = c("red", "black","blue","green","orange"), lwd = 1, cex = 0.8, bty = "n")
       axis(1, at = 1:12, labels = time(pr_mon_LTM_2070_2100), tck = 0, cex.lab=.9,cex.axis=.8)
       
       dev.off()
@@ -481,5 +572,5 @@ writeOGR(obj=platform_macro_basin, layer = 'platform_macro_basin', dsn=path , dr
 
 write.csv(data_platform_mon,file=paste0('../results/data_macrobasin_platform_mon.csv'),row.names = FALSE)
 write.csv(data_platform_yr,file=paste0('../results/data_macrobasin_platform_yr.csv'),row.names = FALSE)
-write.csv(data_platform_mon_LTM,file=paste0('../results/data_macrobasin_platform_mon_LTM.csv'),row.names = FALSE)
-
+# write.csv(data_platform_mon_LTM,file=paste0('../results/data_macrobasin_platform_mon_LTM.csv'),row.names = FALSE)
+write.csv(data_platform_mon_LTM,file=paste0('../results/data_macrobasin_platform_LTM.csv'),row.names = FALSE)
